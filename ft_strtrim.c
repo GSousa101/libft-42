@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gusousa <gusousa@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 17:10:43 by gusousa           #+#    #+#             */
-/*   Updated: 2022/05/30 10:20:43 by gusousa          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -18,6 +6,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
+	// Olha como fixa a função "set" e vai incrementando na s1.
 	while (*s1 && ft_strchr((char *)set, *s1))
 		s1++;
 	len = ft_strlen(s1);
