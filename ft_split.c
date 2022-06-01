@@ -1,6 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gusousa <gusousa@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/10 09:02:16 by gusousa           #+#    #+#             */
+/*   Updated: 2022/05/30 17:10:30 by gusousa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	calculate_word_len(char *s1, int c);
+#include "libft.h"
 
 static size_t	count_words(char const *s, char sep)
 {
@@ -20,7 +30,7 @@ static size_t	count_words(char const *s, char sep)
 	return (qtd_word);
 }
 
-char	**split(char	**str_splitted, char const *s, char sep)
+static char	**split(char	**str_splitted, char const *s, char sep)
 {
 	size_t	qtd_words;
 	size_t	line;
@@ -31,7 +41,6 @@ char	**split(char	**str_splitted, char const *s, char sep)
 	while (line < qtd_words)
 	{
 		word_len = 0;
-		// Enquanto não tiver chegado no final E quando chegar numa palavra, se sair dela, não atende a condição.
 		while (*s && (word_len == 0 || *s != sep))
 		{
 			if (*s != sep)
